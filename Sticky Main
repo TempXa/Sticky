@@ -178,11 +178,8 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
-            end
-        end
-    end)
-    
-    elseif game.Players.LocalPlayer.Character:FindFirstChild("Suna") then
+
+elseif game.Players.LocalPlayer.Character:FindFirstChild("Suna") then
 local args = {
     [1] = {
         [1] = {
@@ -235,8 +232,7 @@ local args = {
     }
 }
 
-game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
-            end
+     game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))       end
         end
     end)
 

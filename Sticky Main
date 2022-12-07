@@ -1,9 +1,16 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TempXa/Keys/main/Keys"))()
+    
+    _G.keyEnter:GetPropertyChangedSignal("Text"):Connect(function()
+if not table.find(_G.Keys,_G.keyEnter.Text) then
+print("Typing")
+else
+    game.Players.LocalPlayer.PlayerGui.StickyKey:Destroy()
 if not game.Players.LocalPlayer:FindFirstChild("bomb") then
-local IS1 = false
-local IS2 = false
-local IS3 = false
-local IS4 = false
-local IS5 = false
+_G.IS1 = false
+_G.IS2 = false
+_G.IS3 = false
+_G.IS4 = false
+_G.IS5 = false
 local startBomb = Instance.new("BoolValue", game.Players.LocalPlayer)
 startBomb.Value = false
 startBomb.Name = "bomb"
@@ -18,33 +25,44 @@ local StartUp = BlekLib:Create({
         TimePosition = 1
     }
 })
+
+
 local maintab = StartUp:Tab('Main')
 local Rapid = StartUp:Tab('Rapid Attack')
 local charactertab = StartUp:Tab('Character')
 local uitab = StartUp:Tab('Settings')
+
+charactertab:Slider('Speed', 24, 24, 500, function(a)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = a
+end)
+
+uitab:Button('Destroy GUI', function()
+    StartUp:Exit()
+    bomb:Destroy()
+end)
 
 maintab:Toggle('Self Nuke', function(v)
     bomb.Value = v
 end)
 
 Rapid:Toggle('Starter Island', function(v)
-    IS1 = v
+    IS1 = not IS1
 end)
 
 Rapid:Toggle('Monke Island', function(v)
-    IS2 = v
+    IS2 = not IS2
 end)
 
 Rapid:Toggle('Orange Town', function(v)
-    IS3 = v
+    IS3 = not IS3
 end)
 
 Rapid:Toggle('Marine Fort', function(v)
-    IS4 = v
+    IS4 = not IS4
 end)
 
 Rapid:Toggle('Mansion', function(v)
-    IS5 = v
+    IS5 = not IS5
     end)
 end
 --Self Nuke
@@ -112,7 +130,7 @@ local args = {
         [1] = {
             [1] = "\3",
             [2] = "skillsControl",
-            [3] = "Mera",
+            [3] = "Light",
             [4] = "Z",
             [5] = "Release",
             [6] = nil --[[Vector3]]
@@ -125,7 +143,7 @@ local args = {
         [1] = {
             [1] = "\3",
             [2] = "skillsControl",
-            [3] = "Mera",
+            [3] = "Light",
             [4] = "X",
             [5] = "Release",
             [6] = nil --[[Vector3]]
@@ -138,7 +156,7 @@ local args = {
         [1] = {
             [1] = "\3",
             [2] = "skillsControl",
-            [3] = "Mera",
+            [3] = "Light",
             [4] = "V",
             [5] = "Release",
             [6] = nil --[[Vector3]]
@@ -151,7 +169,7 @@ local args = {
         [1] = {
             [1] = "\3",
             [2] = "skillsControl",
-            [3] = "Mera",
+            [3] = "Light",
             [4] = "B",
             [5] = "Release",
             [6] = nil --[[Vector3]]
@@ -164,11 +182,13 @@ game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
         end
     end)
 
---Rapid Attack
-
-
-
 --Lag Reduce
 workspace.Effects.ChildAdded:Connect(function(child)
     child:Destroy()
+end)
+
+--Rapid Attack
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TempXa/Rapid-Attack/main/Islands"))()
+    end
 end)

@@ -130,7 +130,7 @@ local args = {
         [1] = {
             [1] = "\3",
             [2] = "skillsControl",
-            [3] = "Light",
+            [3] = "Mera",
             [4] = "Z",
             [5] = "Release",
             [6] = nil --[[Vector3]]
@@ -143,7 +143,7 @@ local args = {
         [1] = {
             [1] = "\3",
             [2] = "skillsControl",
-            [3] = "Light",
+            [3] = "Mera",
             [4] = "X",
             [5] = "Release",
             [6] = nil --[[Vector3]]
@@ -156,7 +156,7 @@ local args = {
         [1] = {
             [1] = "\3",
             [2] = "skillsControl",
-            [3] = "Light",
+            [3] = "Mera",
             [4] = "V",
             [5] = "Release",
             [6] = nil --[[Vector3]]
@@ -169,7 +169,65 @@ local args = {
         [1] = {
             [1] = "\3",
             [2] = "skillsControl",
-            [3] = "Light",
+            [3] = "Mera",
+            [4] = "B",
+            [5] = "Release",
+            [6] = nil --[[Vector3]]
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+            end
+        end
+    end)
+    
+    elseif game.Players.LocalPlayer.Character:FindFirstChild("Suna") then
+local args = {
+    [1] = {
+        [1] = {
+            [1] = "\3",
+            [2] = "skillsControl",
+            [3] = "Suna",
+            [4] = "Z",
+            [5] = "Release",
+            [6] = nil --[[Vector3]]
+        }
+    }
+}
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+local args = {
+    [1] = {
+        [1] = {
+            [1] = "\3",
+            [2] = "skillsControl",
+            [3] = "Suna",
+            [4] = "X",
+            [5] = "Release",
+            [6] = nil --[[Vector3]]
+        }
+    }
+}
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+local args = {
+    [1] = {
+        [1] = {
+            [1] = "\3",
+            [2] = "skillsControl",
+            [3] = "Suna",
+            [4] = "V",
+            [5] = "Release",
+            [6] = nil --[[Vector3]]
+        }
+    }
+}
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+local args = {
+    [1] = {
+        [1] = {
+            [1] = "\3",
+            [2] = "skillsControl",
+            [3] = "Suna",
             [4] = "B",
             [5] = "Release",
             [6] = nil --[[Vector3]]

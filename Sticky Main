@@ -1,5 +1,7 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/TempXa/Keys/main/Keys"))()
     
+    print(_G.Redeemed)
+    
 _G.keyEnter:GetPropertyChangedSignal("Text"):Connect(function()
 if not table.find(_G.Keys,_G.keyEnter.Text) then
 print("Typing or Used")
@@ -248,6 +250,7 @@ end)
 --Rapid Attack
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/TempXa/Rapid-Attack/main/Islands"))()
+return _G.Redeemed
         end
     end
 end)

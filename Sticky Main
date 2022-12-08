@@ -1,9 +1,13 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/TempXa/Keys/main/Keys"))()
     
-    _G.keyEnter:GetPropertyChangedSignal("Text"):Connect(function()
+_G.keyEnter:GetPropertyChangedSignal("Text"):Connect(function()
 if not table.find(_G.Keys,_G.keyEnter.Text) then
-print("Typing")
+print("Typing or Used")
 else
+if table.find(_G.Redeemed, _G.keyEnter.Text.." = ".. _G.HWID then
+_G.keyEnter.Text = "Key Used."
+else
+table.insert(_G.Redeemed, _G.keyEnter.Text.." = ".._G.HWID) 
     game.Players.LocalPlayer.PlayerGui.StickyKey:Destroy()
 if not game.Players.LocalPlayer:FindFirstChild("bomb") then
 _G.IS1 = false
@@ -244,5 +248,6 @@ end)
 --Rapid Attack
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/TempXa/Rapid-Attack/main/Islands"))()
+        end
     end
 end)

@@ -10,6 +10,7 @@ if table.find(_G.Redeemed, _G.keyEnter.Text.." = ".. _G.HWID) then
 _G.keyEnter.Text = "Key Used."
 else
 table.insert(_G.Redeemed, _G.keyEnter.Text.." = ".._G.HWID) 
+ print(_G.Redeemed, _G.keyEnter.Text.." = ".._G.HWID)
     game.Players.LocalPlayer.PlayerGui.StickyKey:Destroy()
 if not game.Players.LocalPlayer:FindFirstChild("bomb") then
 _G.IS1 = false

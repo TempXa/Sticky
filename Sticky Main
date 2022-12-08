@@ -4,7 +4,7 @@ _G.keyEnter:GetPropertyChangedSignal("Text"):Connect(function()
 if not table.find(_G.Keys,_G.keyEnter.Text) then
 print("Typing or Used")
 else
-if table.find(_G.Redeemed, _G.keyEnter.Text.." = ".. _G.HWID then
+if table.find(_G.Redeemed, _G.keyEnter.Text.." = ".. _G.HWID) then
 _G.keyEnter.Text = "Key Used."
 else
 table.insert(_G.Redeemed, _G.keyEnter.Text.." = ".._G.HWID) 

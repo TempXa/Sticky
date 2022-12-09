@@ -57,6 +57,10 @@ maintab:Toggle('Self Nuke', function(v)
     bomb.Value = v
 end)
 
+maintab:Toggle('Auto Defence', function(v)
+    defence.Value = v
+end)
+
 Rapid:Toggle('Starter Island', function(v)
     IS1 = not IS1
 end)

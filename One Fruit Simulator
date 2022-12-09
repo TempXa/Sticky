@@ -4,6 +4,8 @@ _G.IS2 = false
 _G.IS3 = false
 _G.IS4 = false
 _G.IS5 = false
+_G.tpwalk = false
+_G.tpwalkSpeed = 0
 local startBomb = Instance.new("BoolValue", game.Players.LocalPlayer)
 startBomb.Value = false
 startBomb.Name = "bomb"
@@ -34,7 +36,7 @@ charactertab:Slider('Jump', 50, 50, 500, function(a)
 end)
 
 charactertab:Toggle('TpWalk', function()
-    _G.tpwalk = not tpwalk
+    _G.tpwalk = not _G.tpwalk
 end)
 
 charactertab:Slider('TpWalk Speed', 0, 0, 10, function(a)

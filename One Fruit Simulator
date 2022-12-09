@@ -7,9 +7,13 @@ _G.IS5 = false
 _G.tpwalk = false
 _G.tpwalkSpeed = 0
 local startBomb = Instance.new("BoolValue", game.Players.LocalPlayer)
+local startDefence = Instance.new("BoolValue", game.Players.LocalPlayer)
+startDefence.Value = false
+startDefence.Name = "autoTrain"
 startBomb.Value = false
 startBomb.Name = "bomb"
 local bomb = game.Players.LocalPlayer.bomb
+local defence = game.Players.LocalPlayer.autoTrain
 local lagReduce = false
 local BlekLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/laderite/bleklib/main/library.lua"))()
 local StartUp = BlekLib:Create({
@@ -141,6 +145,29 @@ end)
 workspace.Effects.ChildAdded:Connect(function(child)
     child:Destroy()
 end)
+
+--Auto Defence
+defence:GetPropertyChangedSignal("Value"):Connect(function()
+if game.Players.LocalPlayer.Backpack:FindFirstChild("Defence") then
+game.Players.LocalPlayer.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack.Defence)
+defence.Value = false
+defence.Value = true
+else
+while defence.Value do 
+local args = {
+    [1] = {
+        [1] = {
+            [1] = "\3",
+            [2] = "Defence",
+            [3] = game:GetService("Players").LocalPlayer.Character.Defence,
+            [4] = "Defence"
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+    end
+end
 
 --Rapid Attack
 

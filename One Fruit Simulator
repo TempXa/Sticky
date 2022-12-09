@@ -51,6 +51,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/TempXa/Tpwalk/main/Tp
 uitab:Button('Destroy GUI', function()
     StartUp:Exit()
     bomb:Destroy()
+    defence:Destroy()
 end)
 
 maintab:Toggle('Self Nuke', function(v)
@@ -151,13 +152,13 @@ workspace.Effects.ChildAdded:Connect(function(child)
 end)
 
 --Auto Defence
-defence:GetPropertyChangedSignal("Value"):Connect(function()
+game.Players.LocalPlayer.autoTrain:GetPropertyChangedSignal("Value"):Connect(function()
 if game.Players.LocalPlayer.Backpack:FindFirstChild("Defence") then
 game.Players.LocalPlayer.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack.Defence)
-defence.Value = false
-defence.Value = true
+game.Players.LocalPlayer.autoTrain.Value = false
+game.Players.LocalPlayer.autoTrain.Value = true
 else
-while defence.Value do 
+while game.Players.LocalPlayer.autoTrain.Value do wait()
 local args = {
     [1] = {
         [1] = {

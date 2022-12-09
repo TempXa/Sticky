@@ -33,6 +33,15 @@ charactertab:Slider('Jump', 50, 50, 500, function(a)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = a
 end)
 
+charactertab:Toggle('TpWalk', function()
+    _G.tpwalk = not tpwalk
+end)
+
+charactertab:Slider('TpWalk Speed', 0, 0, 10, function(a)
+    _G.tpwalkSpeed = a
+end)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/TempXa/Tpwalk/main/Tpwalk'))()
+
 uitab:Button('Destroy GUI', function()
     StartUp:Exit()
     bomb:Destroy()

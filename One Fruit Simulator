@@ -77,14 +77,15 @@ end
 local bomb = game.Players.LocalPlayer.bomb
 
 bomb:GetPropertyChangedSignal("Value"):Connect(function()
+local weapon = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Name
 while bomb.Value do wait(0.5)
-    if game.Players.LocalPlayer.Character:FindFirstChild("Light") then
+        print("Checkpoint")
 local args = {
     [1] = {
         [1] = {
             [1] = "\3",
             [2] = "skillsControl",
-            [3] = "Light",
+            [3] = weapon,
             [4] = "Z",
             [5] = "Release",
             [6] = nil --[[Vector3]]
@@ -97,7 +98,7 @@ local args = {
         [1] = {
             [1] = "\3",
             [2] = "skillsControl",
-            [3] = "Light",
+            [3] = weapon,
             [4] = "X",
             [5] = "Release",
             [6] = nil --[[Vector3]]
@@ -110,7 +111,7 @@ local args = {
         [1] = {
             [1] = "\3",
             [2] = "skillsControl",
-            [3] = "Light",
+            [3] = weapon,
             [4] = "V",
             [5] = "Release",
             [6] = nil --[[Vector3]]
@@ -123,61 +124,7 @@ local args = {
         [1] = {
             [1] = "\3",
             [2] = "skillsControl",
-            [3] = "Light",
-            [4] = "B",
-            [5] = "Release",
-            [6] = nil --[[Vector3]]
-        }
-    }
-}
-
-game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
-elseif game.Players.LocalPlayer.Character:FindFirstChild("Mera") then
-local args = {
-    [1] = {
-        [1] = {
-            [1] = "\3",
-            [2] = "skillsControl",
-            [3] = "Mera",
-            [4] = "Z",
-            [5] = "Release",
-            [6] = nil --[[Vector3]]
-        }
-    }
-}
-game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
-local args = {
-    [1] = {
-        [1] = {
-            [1] = "\3",
-            [2] = "skillsControl",
-            [3] = "Mera",
-            [4] = "X",
-            [5] = "Release",
-            [6] = nil --[[Vector3]]
-        }
-    }
-}
-game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
-local args = {
-    [1] = {
-        [1] = {
-            [1] = "\3",
-            [2] = "skillsControl",
-            [3] = "Mera",
-            [4] = "V",
-            [5] = "Release",
-            [6] = nil --[[Vector3]]
-        }
-    }
-}
-game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
-local args = {
-    [1] = {
-        [1] = {
-            [1] = "\3",
-            [2] = "skillsControl",
-            [3] = "Mera",
+            [3] = weapon,
             [4] = "B",
             [5] = "Release",
             [6] = nil --[[Vector3]]
@@ -187,62 +134,8 @@ local args = {
 
 game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
 
-elseif game.Players.LocalPlayer.Character:FindFirstChild("Suna") then
-local args = {
-    [1] = {
-        [1] = {
-            [1] = "\3",
-            [2] = "skillsControl",
-            [3] = "Suna",
-            [4] = "Z",
-            [5] = "Release",
-            [6] = nil --[[Vector3]]
-        }
-    }
-}
-game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
-local args = {
-    [1] = {
-        [1] = {
-            [1] = "\3",
-            [2] = "skillsControl",
-            [3] = "Suna",
-            [4] = "X",
-            [5] = "Release",
-            [6] = nil --[[Vector3]]
-        }
-    }
-}
-game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
-local args = {
-    [1] = {
-        [1] = {
-            [1] = "\3",
-            [2] = "skillsControl",
-            [3] = "Suna",
-            [4] = "V",
-            [5] = "Release",
-            [6] = nil --[[Vector3]]
-        }
-    }
-}
-game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
-local args = {
-    [1] = {
-        [1] = {
-            [1] = "\3",
-            [2] = "skillsControl",
-            [3] = "Suna",
-            [4] = "B",
-            [5] = "Release",
-            [6] = nil --[[Vector3]]
-        }
-    }
-}
-
-     game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))       end
         end
-    end)
+end)
 
 --Lag Reduce
 workspace.Effects.ChildAdded:Connect(function(child)

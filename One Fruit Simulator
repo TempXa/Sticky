@@ -26,21 +26,12 @@ local charactertab = StartUp:Tab('Character')
 local uitab = StartUp:Tab('Settings')
 
 charactertab:Slider('Speed', 24, 24, 500, function(a)
-repeat wait()
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = a
-until told
 end)
 
 charactertab:Slider('Jump', 50, 50, 500, function(a)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = a
 end)
-
-charactertab:Slider('Jump', 50, 50, 500, function(a)
-repeat wait()
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = a
-until told
-end)
-
 
 uitab:Button('Destroy GUI', function()
     StartUp:Exit()
@@ -75,7 +66,7 @@ end
 local bomb = game.Players.LocalPlayer.bomb
 
 bomb:GetPropertyChangedSignal("Value"):Connect(function()
-while bomb.Value do wait(0.1)
+while bomb.Value do wait(0.5)
     if game.Players.LocalPlayer.Character:FindFirstChild("Light") then
 local args = {
     [1] = {

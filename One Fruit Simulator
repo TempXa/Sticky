@@ -170,9 +170,9 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+        end
     end
-end
-
+end)
 --Rapid Attack
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/TempXa/Rapid-Attack/main/Islands"))()
